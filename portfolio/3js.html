@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Portfolio : A portfolio for Master&#39;s degree at University of Montana">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+
+    <title>3D Tree</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="../index.html">Back to Home Page</a>
+
+          <h1 id="project_title">3D Tree</h1>
+          <h2 id="project_tagline">Computer Graphics - Fall 2014</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+
+<div>
+  <img src="images/tree.jpg" id="project_img"/>
+</div>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why you did it?</h3>
+
+<p>
+    This was one of the assignments in Computer Graphic course tought by <a href="http://hs.umt.edu/cs/facultyAndStaff/default.php?s=Johnson">Dr. Jesse Johnson</a>.
+    in the assignment, we were asked to build a tree by using Three.js with the rotation function from 3.js library.
+</p>
+
+<h3>
+<a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What it does?</h3>
+
+<p>
+  The big goal for this project is to practice how to do the rotation in 3.js. Also, in this project, we got a chance to get familiar with the syntax of javascript, and how to apply the texture to your model in 3.js.
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How you built it?
+</h3>
+
+<p>
+  I start from the trunk part, which is a cylinder 3d graphic with different radius on each side. Then I wrote nested loops, for the first level, I loop from 0 to 4 which means the entire tree has 5 levels, for the second level, I loop from 0 to pow(4,i+1), pow(4,i+1) is the total number of branches the tree has on the current level,
+   for the third level of the loop, I loop from 1 to 4 which means each branch (trunck) generate 4 branches for the next level. The 4 branches for the next level rotate -45 degrees on z direction, 45 degrees on z direction, -45 degrees on x direction and 45 degrees on x direction respectively.
+   <br/><br/>
+   After the model of the tree has been built, I applied texture to the model by using THREE.ImageUtils.loadTexture function provided by 3.js. Also I have to use the command "--allow-file-access-from-files" to allow the browser to load the texture.
+   <br/><br/>
+   In the end, I attached an Icosahedron (which is also a assignment in this class) to each branch on the last level as the flower, and a green triangle geometry as the leaf. 
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What did you learn?
+</h3>
+
+<p>
+  In this assignment, I learned how to use the object.rotation attribute to rotate geometries in 3.js. Also I learned how to use THREE.ImageUtils.loadTexture which is a function provided by THREE.js to load the texture to the geometries.
+</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
