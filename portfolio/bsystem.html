@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Portfolio : A portfolio for Master&#39;s degree at University of Montana">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+
+    <title>Banking System</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="../index.html">Back to Home Page</a>
+
+          <h1 id="project_title">Banking System</h1>
+          <h2 id="project_tagline">Adv Prgrmng Theory - Fall 2014</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+
+<div>
+  <img src="images/aptheory.jpg" id="project_img"/>
+</div>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why you did it?</h3>
+
+<p>
+  This was the final project in Joel Henry's Adv Programming Theory course in 2014. The goal for this project is to practice the usage of programming design patterns. Four design patterns should be used in this project.
+   The idea of this system is provided by Tom Battaglia. There are 4 design pattern used in this system: MVC, Adapter, Proxy and Factory.
+</p>
+
+<h3>
+<a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What it does?</h3>
+
+<p>
+  This is a simple banking system, it has a user management module in which the users can sign in and change their password, users can also do the internal money transfer and external money transfer to another account..
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How you built it?
+</h3>
+
+<p>
+  The whole project contains 4 design patterns, I use the MVC (Model, View, Controller) pattern to handle user's request. When user send a request to the server, the controller of MVC pattern will handle the request and send it to the right model.
+   For all the model objects in this system, they are all built base on Proxy design pattern. Each service is a proxy of a DAO (Data Access Object) which talks to the database. <br/><br/>I wrote a Java interface called Service, all the models implement the Service interface.
+    There is a class called Service Factory which will build services according to the request which is the usage of Factory design pattern. At last, there is a class called TransferPrechecker which has a composition relationship with the class CheckBalance, this is the useage of Adapter design pattern.
+     This is because, if the business logic changed, the check balance class may implement another interface,so we need an adapter design pattern here to make it consistent.
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What did you learn?
+</h3>
+
+<p>
+  In this assignment, I learned how to use UML diagram to do the object oriented system design. I also learned how to use programming design patterns and the reason why we want to use programming design patterns.
+</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
