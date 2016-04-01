@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Portfolio : A portfolio for Master&#39;s degree at University of Montana">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+
+    <title>Yahoo Stock</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="../index.html">Back to Home Page</a>
+
+          <h1 id="project_title">Yahoo Stock</h1>
+          <h2 id="project_tagline">Real-time Data Analysis - Spring 2015</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+
+<div>
+  <img src="images/yhstock1.jpg" id="project_img1"/><br/>
+  <img src="images/yhstock2.jpg" id="project_img2"/>
+</div>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why you did it?</h3>
+
+<p>This was one of the project in Real-time data analysis class taught by Eric Tangedahl and Joel Henry. I enrolled in the class as a graduate student from Computer Science department, this is an independent study offered by CS professor Jeol Henry. In this project, I need to take the feeds of stock price from Yahoo, and write models to do the time series analysis, and make decision of buy/sell decisions by comparing the value returned by the model and the real value from Yahoo stock.
+</p>
+
+<h3>
+<a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What it does?</h3>
+
+<p>
+  First, it will grab stock price data from yahoo stock, and get rid of the information we are not intersted. There are two models in the project called moving average and exponential smoothing which do the time series analysis job and return a forecasting value. The forecasting value will be compared with the real value and the program gives an advise about whether to sell stock or buy stock according to the result of comparison.
+   There are two option for the output in the program: to sink to a file or to print to the console.
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How you built it?
+</h3>
+
+<p>
+  I used ACM_Source to grab data from yahoo finance api, and the stream data goes to a ACM_Splitter operator which retrieves those fields we are interested in. Then I have a user defined operator which is implemented in Java.
+   <br/><br/>In the user defined operator, I implemented two time series analysis models, the moving average and exponential smoothing. For the moving average, I just calculate the sum of all numbers in the cache and return the average as forecasting value from the model.
+    For exponential smoothing, I defined a coefficient and use the formula of exponential smoothing to get the forecasting value.
+     <br/><br/>For making the decision of buy and sell, I compare the forecasting value with the actual value. A buy decision will be suggested when the forecasting value goes lower than the actual value, other wise a sell decision will be made. I also set a difference threshold when the difference of the two price value cannot pass the threshold, the program sends a wait decision instead.
+      For the output, I use a FileSink operator which sinks all the output to a file. I also use a ScreenOut operator to output the decisions to the console.
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What did you learn?
+</h3>
+
+<p>
+  In this project, I learned how to use IBM InfoSphere Streams to do the stream data analysis. I learned what is time series analysis, how moving average and exponential smoothing work and how to implement them. I learn how to develop user defined operators in InfoSphere Streams.
+</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
