@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Portfolio : A portfolio for Master&#39;s degree at University of Montana">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+
+    <title>Laptop Forensics</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="../index.html">Back to Home Page</a>
+
+          <h1 id="project_title">Laptop Forensics</h1>
+          <h2 id="project_tagline">Digital Forensics - Fall 2015</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+
+<div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5WwDOTGj8JQ" frameborder="0" allowfullscreen></iframe>
+</div>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why you did it?</h3>
+
+<p>
+  This was the final project in the Digital Forensics class tought by Sherri Davidoff. In this project, we did the digital forensics on an old personal laptop which has Windows 7 installed on it. The project has been divided into 3 parts,
+   hard drive analysis, Windows registry analysis and memory analysis.
+</p>
+
+<h3>
+<a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What it does?</h3>
+
+<p>
+  The big goal of this project is to practice all the techniques I have learned in the digital forensics class. By doing this, we were interested in user's web surfing histroy, user deleted files and folders, key words in the operating system, malwares, and timeline of user's activities on the operating system.
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How you built it?
+</h3>
+
+<p>
+  This is a group project and I was responsible for the first part which is the hard drive analysis. I did the forensics in Kali Linux environment.
+   <br/><br/>
+    First I use a tool called "dcfldd" provided by Kali Linux to image the whole hard drive so that I can keep everything on the hard drive intact. After that, I calculate the hash value of both the image and the hard drive itself by using SHA256 to make sure they contain the same data. I did everything in Kali Linux terminal and used the "script"
+     command to document all my command lines as part of the evidence.
+    <br/><br/>
+    After I got the image of the hard drive, I used "mmls" and "fsstat" to check the information on partition table. It told me how many partitions it has on the hard drive and where are the start and end sectors for each partition.
+     I used "tsk_recover" command to recover both the allocated files and unallocated files from each partitions.
+    <br/><br/>
+    At last, I used malware detection tool called "ClamAV" to scan all those files I recovered from the hard drive image. Totally, I recovered 77404 allocated files and 27919 unallocated files. Two user deleted pictures has been recovered.
+     3 malwares and 24 virus infected files have been detected.
+</p>
+
+<h3>
+  <a id="support-or-contact-1" class="anchor" href="#support-or-contact-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What did you learn?
+</h3>
+
+<p>
+  In this project, I learned how to document command line script in Kali Linux. I learned how to use "dcfldd" to image the hard drive, how to use SHA256 to calculate hash value, and how to check the partition table information on image in Kali Linux and recover files from the image. At last, I learned how to use "ClamAV" to detect malware.
+</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
